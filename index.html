@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoreTech</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="menu">
+        <button onclick="abrirPC()">
+            PC
+        </button>
+        <button onclick="abrirNotebook()">
+            Notebook
+        </button>
+    </div>
+    <h1 class="logo">CoreTech</h1>
+</header>
+<main>
+    <section class="conteudo">
+            <h2 class="logo">CoreTech</h2>
+            <p>
+                Explore curiosidades sobre computadores,
+                PCs gamers e notebooks.
+            </p>
+        </section>
+    <aside>
+     <h3>Cursos</h3>
+            <div id="anuncio">
+         </div>
+        </aside>
+</main>
+<div id="modal">
+<div class="painel">
+<button class="fechar" onclick="fecharModal()">
+X
+</button>
+        <div id="textoModal">
+        </div>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
