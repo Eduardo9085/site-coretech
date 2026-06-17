@@ -1,30 +1,15 @@
 <?php
-class Database {
-private $host = "sql200.infinityfree.com";
-private $db_name = "if0_42199495_loja";
-private $username = "if0_42199495";
-private $password = "3du4rd02010";
-    public $conn;
+// O getenv() serve para o PHP pegar os dados que você acabou de configurar no Railway
+$host     = getenv('DB_HOST');
+$usuario  = getenv('DB_USER');
+$senha    = getenv('DB_PASSWORD');
+$banco    = getenv('DB_NAME');
+$porta    = getenv('DB_PORT') ? getenv('DB_PORT') : 3306; // Caso use porta específica
 
+// Exemplo usando MySQLi (ajuste conforme o seu código atual)
+$conexao = new mysqli($host, $usuario, $senha, $banco, $porta);
 
-
-    public function conectar (){
-        $this->conn = null;
-
-        try {
-            $this->conn = new PDO(
-                "mysql:host=" . $this->host . ";dbname=" . $this->db_name . ";charset=utf8",
-                $this->username,
-                $this->password
-            );
-
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        } catch(PDOException $e) {
-            die("Erro na conexão; " . $e->getMessage());
-        }
-
-        return $this->conn;
-    }
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
 }
 ?>
