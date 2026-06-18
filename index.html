@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreTech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1 class="logo">CoreTech</h1>
+    <button onclick="abrirModalCadastro()" style="background:#38bdf8; color:#0f172a; padding:10px 20px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">Cadastrar</button>
+</header>
+
+<main>
+    <section class="conteudo">
+        <div class="hero-texto">
+            <h2>Impulsione seu Conhecimento</h2>
+            <p>Descubra o universo do hardware, a evolução dos notebooks e o poder dos PCs Gamers.</p>
+        </div>
+        
+        <div class="cards-container">
+            <div class="card" onclick="abrirPC()">
+                <div class="card-icone"></div>
+                <h3>PC Gamer</h3>
+                <p>Do ENIAC aos setups modernos com ray tracing.</p>
+                <span class="card-link">Explorar →</span>
+            </div>
+            
+            <div class="card" onclick="abrirNotebook()">
+                <div class="card-icone"></div>
+                <h3>Notebooks</h3>
+                <p>A evolução da mobilidade e alta performance.</p>
+                <span class="card-link">Explorar →</span>
+            </div>
+            
+            <div class="card">
+                <div class="card-icone"></div>
+                <h3>Curiosidades</h3>
+                <p>Fatos surpreendentes sobre o world tech.</p>
+                <span class="card-link">Em breve</span>
+            </div>
+        </div>
+    </section>
+
+    <aside>
+        <h3>Publicidade</h3>
+        <div id="anuncio" class="anuncio"></div>
+    </aside>
+</main>
+
+<section class="forum">
+    <h2>Avaliações</h2>
+
+    <form id="formAvaliacao">
+        <input type="text" id="inputNome" placeholder="Seu nome" required>
+
+        <div class="estrelas">
+            <label>Nota:</label>
+            <div class="star-group">
+                <input type="radio" name="estrelas" id="s5" value="5">
+                <label for="s5">★</label>
+                <input type="radio" name="estrelas" id="s4" value="4">
+                <label for="s4">★</label>
+                <input type="radio" name="estrelas" id="s3" value="3">
+                <label for="s3">★</label>
+                <input type="radio" name="estrelas" id="s2" value="2">
+                <label for="s2">★</label>
+                <input type="radio" name="estrelas" id="s1" value="1">
+                <label for="s1">★</label>
+            </div>
+        </div>
+
+        <textarea id="inputMensagem" placeholder="Escreva sua avaliação..." required></textarea>
+        <button type="submit">Enviar Avaliação</button>
+    </form>
+
+    <div id="listaComentarios"></div>
+</section>
+
+<div id="modal">
+    <div class="painel">
+        <button class="fechar" onclick="fecharModal()">✕</button>
+        <div id="textoModal"></div>
+    </div>
+</div>
+
+<div class="chatbot-btn" onclick="toggleChatbot()">
+    <img src="chatbot.gif" alt="Abrir chat">
+</div>
+
+<div class="chatbot-janela" id="chatbot-janela">
+    <div class="chatbot-header">
+        <span> CoreBot</span>
+        <button onclick="toggleChatbot()">✕</button>
+    </div>
+    <div class="chatbot-logs" id="chatbot-logs"></div>
+    <div class="chatbot-input-area">
+        <input type="text" id="chatbot-input" placeholder="Digite sua mensagem...">
+        <button id="chatbot-enviar">→</button>
+    </div>
+</div>
+
+<script type="module" src="app.js"></script>
+
+<div id="modal-cadastro" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000;">
+    <div class="painel" style="width: 90%; max-width: 400px; padding: 40px; border-radius: 25px; position: relative;">
+        <button class="fechar" onclick="fecharModalCadastro()">✕</button>
+        
+        <h2 style="color: #38bdf8; margin-bottom: 20px; text-align: center; font-size: 1.6rem;">Criar Conta</h2>
+        
+        <form id="form-cadastro" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="email" id="cadastro-email" placeholder="Seu melhor e-mail" required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(56,189,248,0.3); background: #0f172a; color: #f8fafc; font-size: 0.95rem; outline: none;">
+            <input type="password" id="cadastro-senha" placeholder="Crie uma senha (mínimo 6 dígitos)" required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(56,189,248,0.3); background: #0f172a; color: #f8fafc; font-size: 0.95rem; outline: none;">
+            <button type="submit" style="padding: 12px; border: none; border-radius: 8px; background: linear-gradient(135deg, #38bdf8, #818cf8); color: white; font-size: 0.95rem; font-weight: 700; cursor: pointer; border: 1px solid #38bdf8;">Salvar Cadastro</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
