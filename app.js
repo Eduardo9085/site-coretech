@@ -281,7 +281,7 @@ function sanitizar(texto) {
 carregarComentarios();
 
 // ── CHATBOT ────────────────────────────────────────
-const GROQ_API_KEY = "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";
+const GROQ_API_KEY = "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";
 
 const chatHistorico = [
     {
